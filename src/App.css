@@ -1,0 +1,85 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer CSS */
+.icons {
+  list-style: none;
+  display: flex;
+
+}
+
+.icons li{
+  margin-left: 0px;
+  margin-right: 20px;
+
+}
+
+.icons li a {
+  position: relative; 
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 63px;
+  border-radius: 50%;
+  border: 1px solid #5982f4;
+  font-size: 25px;
+  color: #5982f4;
+  transition: .5s;
+}
+
+.icons li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #5982f4;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+.icons li a:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #5982f4;
+}
+
+.icons li a:hover {
+  color: #5982f4;
+  box-shadow: 0 0 15px #5982f4;
+  text-shadow: 0 0 15px #5982f4;
+}
+
+
+
+
+
+.menu{
+  list-style: none;
+}
+
+.menu li{
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.input{
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+
+
+/* //React Slick  Project page */
+ 
+  .slick-slider {
+    overflow: hidden;
+  }

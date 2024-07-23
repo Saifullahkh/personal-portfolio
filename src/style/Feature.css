@@ -1,0 +1,33 @@
+.box {
+    display: block;
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+    background-color: #454e67 !important;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .overlay{
+    width: 320px;
+    height:320px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .slide-up .overlay{
+    background-color: #5982f4;
+
+    color: #fff;
+    transform: translateY(100%);
+    -webkit-transition: transform 0.5s ease-out;
+    -o-transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+  }
+  
+  .slide-up .box:hover .overlay{
+    transform: translateY(0);
+  }
