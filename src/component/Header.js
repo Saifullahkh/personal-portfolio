@@ -85,13 +85,12 @@ function Header() {
                       </ul>
                     </Box>
                     <IconButton
-                        color='#5982f4'
                         aria-label='open drawer'
                         edge='start'
                         sx={{display: {sm:'none'}}}
                         onClick={handleDrawerToggler}
                      >
-                        <IoMenu />
+                        <span style={{color: '#5982f4'}}><IoMenu /></span>
                     </IconButton>
                 </Toolbar>
             </AppBar>
