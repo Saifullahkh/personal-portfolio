@@ -55,7 +55,7 @@ function About() {
                   <span className="dot yellow"></span>
                   <span className="dot green"></span>
                 </div>
-                <div className="tab-name ms-3  small">about_me.js</div>
+                <div className="tab-name text-white ms-3  small">about_me.js</div>
               </div>
               <div className="code-body p-4">
                 <pre>

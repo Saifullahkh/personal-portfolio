@@ -25,12 +25,13 @@ function Header() {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          style={{borderColor: 'white'}}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto align-items-center">
+          <ul className="navbar-nav ms-auto align-items-md-center">
             {['Home', 'About', 'Skill', 'Project'].map((item) => (
               <li className="nav-item" key={item}>
                 <a className="nav-link px-3" href={`#${item.toLowerCase()}`}>
@@ -38,7 +39,7 @@ function Header() {
                 </a>
               </li>
             ))}
-            <li className="nav-item ms-lg-3">
+            <li className="nav-item ms-lg-3 mt-md-0 mt-2">
               <a href="#contact" className="btn-nav-cta">Let's Talk</a>
             </li>
           </ul>

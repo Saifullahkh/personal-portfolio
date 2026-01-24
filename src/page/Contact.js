@@ -40,7 +40,7 @@ function Contact() {
           <div className="title-line mx-auto"></div>
         </div>
 
-        <div className="row g-5">
+        <div className="row ">
           {/* Left Column - Contact Info Cards */}
           <div className="col-lg-5">
             <div className="contact-info-wrapper">
