@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaLinkedinIn, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 
 function Contact() {
   const [formData, setFormData] = useState({

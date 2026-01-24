@@ -1,7 +1,6 @@
 import React from 'react'
 import SocialIcons from '../component/SocialIcons';
 import '../App.css';
-import { FaHeart } from 'react-icons/fa';
 
 function Footer() {
   const currentYear = new Date().getFullYear();

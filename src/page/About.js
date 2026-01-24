@@ -76,11 +76,13 @@ function About() {
                     <br /> &nbsp;&nbsp;location:{" "}
                     <span className="code-string">'Pakistan'</span>
                     <br />{"}"};<br />
-                    <br />{" "}
+                    <br />
+                    {" "}
                     <span className="code-comment">
-                      // Always learning new things...
+                     {`// Always learning new things...`}
                     </span>
-                    <br />{" "}
+                    <br />
+                    {" "}
                     <span className="code-var">developer</span>.learn(
                     <span className="code-string">'Next.js'</span>);{" "}
                   </code>
