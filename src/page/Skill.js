@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaBootstrap } from 'react-icons/fa';
-import { SiNextdotjs, SiMysql, SiTailwindcss } from 'react-icons/si';
+import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 import '../App.css';
 import { MdPalette } from 'react-icons/md';
 
