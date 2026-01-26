@@ -1841,6 +1841,6 @@ textarea:focus-visible {
 /* Custom class to hide scrollbar in Firefox */
 .scrollbar-none {
   scrollbar-width: none !important; /* Firefox */
-  overflow: hidden !importantd;
+  overflow: hidden !important;
 }
 
