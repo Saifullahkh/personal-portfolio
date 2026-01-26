@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Home from './page/Home';
 import About from './page/About';
 import Skill from './page/Skill';
+import Education from './page/Education';
 import Contact from './page/Contact';
 import Footer from './component/Footer';
 import Project from './page/Project';
@@ -13,15 +14,16 @@ import Project from './page/Project';
 
 function App() {
   return (
-    <>
+    <div style={{overflowX: 'hidden'}}>
       <Header />
       <Home />
       <About />
       <Skill />
+      {/* <Education /> */}
       <Project />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 
