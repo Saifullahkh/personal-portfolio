@@ -6,13 +6,13 @@ import { MdPalette } from 'react-icons/md';
 
 function Skill() {
    const skills = [
-    { name: 'Next.js', icon: <SiNextdotjs />, color: '#777' }, // White color for dark theme
-    { name: 'React.js', icon: <FaReact />, color: '#61DAFB' },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#aee9e6' },
-    { name: 'JavaScript', icon: <FaJs />, color: '#F7DF1E' },
     { name: 'HTML5', icon: <FaHtml5 />, color: '#E34F26' },
     { name: 'CSS3', icon: <FaCss3Alt />, color: '#1572B6' },
     { name: 'Bootstrap', icon: <FaBootstrap />, color: '#7952B3' },
+    { name: 'JavaScript', icon: <FaJs />, color: '#F7DF1E' },
+    { name: 'React.js', icon: <FaReact />, color: '#61DAFB' },
+    { name: 'Next.js', icon: <SiNextdotjs />, color: '#000' },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06B6D4' },
     { name: 'Material UI', icon: <MdPalette />, color: '#007FFF' },
 ];
 
@@ -26,13 +26,19 @@ function Skill() {
                     <div className="title-underline"></div>
                 </div>
 
-                <div className="skills-grid">
+                <div className="skills-orbit-container">
+                    <div className="center-skill">
+                        <h4 className="center-title">Skills</h4>
+                    </div>
+
                     {skills.map((skill, index) => (
-                        <div className="skill-card-pro" key={index}>
-                            <div className="icon-box" style={{ color: skill.color }}>
-                                {skill.icon}
+                        <div className="skill-orbit" key={index} style={{ '--i': index }}>
+                            <div className="skill-card-orbit" style={{ '--skill-color': skill.color }}>
+                                <div className="icon-box" style={{ color: skill.color }}>
+                                    {skill.icon}
+                                </div>
+                                <h5 className="skill-label">{skill.name}</h5>
                             </div>
-                            <h5 className="skill-label">{skill.name}</h5>
                         </div>
                     ))}
                 </div>
