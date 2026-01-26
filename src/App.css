@@ -145,7 +145,7 @@ body {
 
 .nav-transparent {
   background: var(--primary-color);
-  padding: 1.25rem 0;
+  padding: 1rem 0;
   transition: var(--transition-smooth);
   position: fixed;
   top: 0;
@@ -162,23 +162,15 @@ body {
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
   opacity: 0.6;
-}
-
-.nav-transparent::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.03) 0%, transparent 100%);
-  pointer-events: none;
 }
 
 .nav-scrolled {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  padding: 0.75rem 0;
+  padding: 0.65rem 0;
   box-shadow: var(--shadow-md);
   border-bottom: 1px solid var(--glass-border);
 }
@@ -186,7 +178,7 @@ body {
 .navbar-brand {
   font-size: 1.5rem !important;
   color: var(--text-light) !important;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   font-weight: 800 !important;
   position: relative;
   transition: var(--transition-base) !important;
@@ -194,35 +186,23 @@ body {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-brand::before {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: var(--accent-glow);
-  border-radius: 50%;
-  top: 50%;
-  left: -20px;
-  transform: translateY(-50%);
-  box-shadow: 0 0 20px var(--accent-glow);
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { transform: translateY(-50%) scale(1); opacity: 1; }
-  50% { transform: translateY(-50%) scale(1.3); opacity: 0.7; }
+.text-accent {
+  background: linear-gradient(135deg, #00ffa3, #00b894);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .navbar-brand::after {
   content: '';
   position: absolute;
   width: 0;
-  height: 3px;
-  bottom: -8px;
+  height: 2px;
+  bottom: -5px;
   left: 0;
-  background: linear-gradient(90deg, var(--accent-glow), transparent);
+  background: linear-gradient(90deg, #00ffa3, transparent);
   transition: var(--transition-base);
-  box-shadow: 0 0 15px var(--accent-glow);
+  box-shadow: 0 0 10px #00ffa3;
   border-radius: var(--radius-full);
 }
 
@@ -235,10 +215,18 @@ body {
   text-shadow: none;
 }
 
+.nav-scrolled .text-accent {
+  background: linear-gradient(135deg, #00b894, #0984e3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Navigation Links */
 .nav-link {
   color: rgba(255, 255, 255, 0.95) !important;
   font-weight: 600 !important;
-  font-size: 0.9375rem !important;
+  font-size: 0.95rem !important;
   transition: var(--transition-base) !important;
   position: relative;
   padding: 0.5rem 1rem !important;
@@ -255,7 +243,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-sm);
   transform: scale(0);
   transition: var(--transition-smooth);
@@ -278,12 +266,11 @@ body {
   transform: translateX(-50%);
   background: currentColor;
   transition: var(--transition-base);
-  box-shadow: 0 0 10px currentColor;
   border-radius: var(--radius-full);
 }
 
 .nav-link:hover::after {
-  width: 65%;
+  width: 60%;
 }
 
 .nav-link:hover {
@@ -295,10 +282,11 @@ body {
   color: var(--primary-color) !important;
 }
 
+/* CTA Button */
 .btn-nav-cta {
   background: var(--text-light);
   color: var(--primary-color);
-  padding: 0.625rem 1.5rem;
+  padding: 0.65rem 1.75rem;
   border-radius: var(--radius-full);
   text-decoration: none;
   font-weight: 700;
@@ -310,6 +298,7 @@ body {
   box-shadow: var(--shadow-sm);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: inline-block;
   will-change: transform, box-shadow;
 }
 
@@ -335,10 +324,108 @@ body {
 
 .btn-nav-cta:hover {
   color: var(--text-light);
-  background-color: var(--primary-color);
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
-  border: 1px solid #fff;
+}
+
+/* Custom Toggler */
+.custom-toggler {
+  border: none;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-base);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.custom-toggler:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.nav-scrolled .custom-toggler {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-scrolled .custom-toggler:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.toggle-icon {
+  font-size: 1.75rem;
+  color: var(--text-light);
+  transition: var(--transition-base);
+}
+
+.nav-scrolled .toggle-icon {
+  color: var(--primary-color);
+}
+
+/* Mobile Menu Animation */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: var(--primary-color);
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .nav-scrolled .navbar-collapse {
+    background: white;
+    border: 1px solid var(--glass-border);
+  }
+
+  .nav-item {
+    margin: 0.3rem 0;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem !important;
+    border-radius: var(--radius-sm);
+    text-align: center;
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+  }
+
+  .nav-scrolled .nav-link:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .btn-nav-cta {
+    display: block;
+    text-align: center;
+    margin: 1rem 0 0.5rem;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
 }
 
 /* ==================== HERO SECTION ==================== */
@@ -859,6 +946,14 @@ code {
   font-family: inherit;
 }
 
+pre {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    overflow: none !important;
+    font-size: .875em;
+}
+
 .btn-read-more {
   text-decoration: none;
   color: var(--primary-color);
@@ -1011,6 +1106,8 @@ code {
   animation-delay: calc(var(--i) * -2.5s);
 }
 
+
+
 .skill-card-orbit {
   width: 110px;
   height: 110px;
@@ -1154,6 +1251,206 @@ code {
     }
   }
 }
+
+/* Education Minimal Section */
+.education-minimal-section {
+  background: #ffffff;
+  padding: 80px 0;
+  position: relative;
+}
+
+.minimal-badge {
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.minimal-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-top: 1rem;
+  letter-spacing: -0.5px;
+}
+
+/* Minimal Timeline */
+.minimal-timeline-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.minimal-timeline-line {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e5e7eb;
+}
+
+.minimal-timeline-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 3rem;
+}
+
+.minimal-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.minimal-timeline-item:last-child .minimal-timeline-line {
+  display: none;
+}
+
+/* Timeline Marker */
+.minimal-timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #5b21b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px #ffffff;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.minimal-timeline-item:hover .minimal-timeline-marker {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px #ffffff, 0 4px 15px rgba(91, 33, 182, 0.3);
+}
+
+.marker-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Year Badge */
+.minimal-year-badge {
+  display: inline-block;
+  background: #5b21b6;
+  color: white;
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.3px;
+}
+
+/* Education Card */
+.minimal-education-card {
+  background: transparent;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.minimal-degree-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.minimal-institution {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.minimal-description {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .minimal-title {
+    font-size: 2rem;
+  }
+
+  .minimal-timeline-container {
+    padding: 1rem 0;
+  }
+
+  .minimal-timeline-item {
+    padding-left: 50px;
+    margin-bottom: 2.5rem;
+  }
+
+  .minimal-timeline-marker {
+    width: 22px;
+    height: 22px;
+    top: 6px;
+  }
+
+  .marker-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .minimal-year-badge {
+    font-size: 0.8rem;
+    padding: 4px 14px;
+  }
+
+  .minimal-degree-title {
+    font-size: 1.25rem;
+  }
+
+  .minimal-institution {
+    font-size: 0.9rem;
+  }
+
+  .minimal-description {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .minimal-title {
+    font-size: 1.75rem;
+  }
+
+  .minimal-timeline-item {
+    padding-left: 45px;
+  }
+
+  .minimal-timeline-marker {
+    width: 20px;
+    height: 20px;
+  }
+
+  .minimal-degree-title {
+    font-size: 1.15rem;
+  }
+
+  .minimal-institution {
+    font-size: 0.85rem;
+  }
+}
+
+
 
 /* Slick slider ki row ko container ke mutabiq set karein */
 .custom-slider .slick-list {
@@ -1516,6 +1813,7 @@ code {
   
   .code-body {
     font-size: 0.875rem;
+    padding: 1rem;
   }
 }
 
@@ -1538,5 +1836,11 @@ input:focus-visible,
 textarea:focus-visible {
   outline: 3px solid var(--primary-color);
   outline-offset: 2px;
+}
+
+/* Custom class to hide scrollbar in Firefox */
+.scrollbar-none {
+  scrollbar-width: none !important; /* Firefox */
+  overflow: hidden !importantd;
 }
 

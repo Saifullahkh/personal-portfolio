@@ -57,8 +57,8 @@ function About() {
                 </div>
                 <div className="tab-name text-white ms-3  small">about_me.js</div>
               </div>
-              <div className="code-body p-4">
-                <pre>
+              <div className="code-body p-4 scrollbar-none">
+                <pre className="overflow-hidden" style={{overflow: 'hidden'}}>
                   <code>
                  {" "}
                     <span className="code-keyword">const</span>{" "}
