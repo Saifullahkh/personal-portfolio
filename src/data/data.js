@@ -1,3 +1,5 @@
+import ecommerce from '../assets/ecommerce-store.png'
+
 export const projects = [
     {
         id: 1,
@@ -17,7 +19,7 @@ export const projects = [
         id: 3,
         title: "E-commerce Website",
         description: "A modern eCommerce website offering a wide range of high-quality products, secure payments, online shopping, fast delivery, and user-friendly shopping experience designed to meet customer needs across all devices.",
-        image: "https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWNvbW1lcmNlfGVufDB8fDB8fHww",
+        image: ecommerce,
         liveDemo: "https://saifullah-ecommerce-website.vercel.app/"
     },
     {
